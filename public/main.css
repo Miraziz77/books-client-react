@@ -10,12 +10,13 @@ body{
     color: #0e1538;
 }
 
-.books{
+.books {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
     justify-content: center;
-    margin: 0 auto;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
 }
 
 .card{
@@ -24,7 +25,8 @@ body{
     background-color: #fff;
     margin: 10px;
     width: 250px;
-    height: 510px;
+    max-width: 100%;
+    height: auto;
 }
 
 .card .card__info{
@@ -89,7 +91,7 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 footer{
@@ -111,6 +113,7 @@ footer{
 
 .author-card {
     width: 200px;
+    max-width: 90%;
     background: white;
     border-radius: 10px;
     overflow: hidden;
@@ -540,5 +543,42 @@ input[type="radio"]:nth-of-type(3):checked ~ .slide-item{
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+    }
+
+    .header__nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header__nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-head {
+        height: 40vh;
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .authors {
+        flex-direction: column;
+        align-items: center;
     }
 }
